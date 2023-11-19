@@ -1,0 +1,20 @@
+package com.judge;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+@Configuration
+public class SpringConfig {
+    @Bean
+    public SqlSessionFactory getSqlSessionFactory() throws IOException {
+        String resource = "com/judge/problem-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        return new SqlSessionFactoryBuilder().build(inputStream);
+    }
+}

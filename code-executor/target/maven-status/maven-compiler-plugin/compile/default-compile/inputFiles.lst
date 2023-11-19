@@ -1,0 +1,14 @@
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/service/CodeExecutorService.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/server/CodeExecutorImpl.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/server/CommandPreparationManagerForLinux.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/server/CommandPreparationManager.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/service/DTO/VerdictDTO.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/service/DTO/CodeDTO.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/server/CommandPreparationManagerForWindows.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/service/requestmappers/CustomObjectMapper.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/Verdict.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/server/CodeVerdictManagerImpl.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/service/requestmappers/CustomJSONParser.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/server/CodeExecutor.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/server/CodeVerdictManager.java
+/home/embi/Documents/Projects/CPJudge/code-executor/src/main/java/com/embi/service/CodeExeuctorServiceImpl.java
