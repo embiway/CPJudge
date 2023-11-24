@@ -3,12 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.judge.ProblemMapper">
-    <select id="getProblem">
-        select 1
+    <select id="getProblem" resultType="com.embi.Problem">
+        select * from problem where ID in (#{id});
     </select>
 
     <insert id="insertProblem">
-        insert into problem values (#{id}, #{problemStatement});
+        insert into problem values (#{id}, #{statement});
     </insert>
 
     <delete id="deleteProblem">

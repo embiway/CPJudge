@@ -25,7 +25,8 @@ public class ProblemDAOImpl implements ProblemDAO {
     @Override
     public void add(Problem problem) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-            sqlSession.insert("ProblemMapper.insertProblem", problem);
+            sqlSession.insert("insertProblem", problem);
+            sqlSession.commit();
         }
     }
 
@@ -41,7 +42,8 @@ public class ProblemDAOImpl implements ProblemDAO {
     @Override
     public void delete(int problemId) {
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-            sqlSession.delete("ProlemMapper.deleteProblem", problemId);
+            sqlSession.delete("deleteProblem", problemId);
+            sqlSession.commit();
         }
     }
 
@@ -49,8 +51,10 @@ public class ProblemDAOImpl implements ProblemDAO {
         ProblemDAO problemDAO = new ProblemDAOImpl();
         Problem problem = new Problem();
         problem.setId(1);
-        problem.setStatement("Hello World");
+        problem.setStatement("Hello World again");
 
-        System.out.println(problemDAO.getProblem(1));
+        problem = problemDAO.getProblem(1);
+        System.out.println(problem.getId());
+        System.out.println(problem.getStatement());
     }
 }

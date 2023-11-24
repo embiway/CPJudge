@@ -121,10 +121,10 @@ public class CodeExecutorImpl implements CodeExecutor {
             } catch (InterruptedException | IOException e) {
                 result = "Compilation interrupted: " + e.getMessage();
             }
-//            finally {
-//                // Delete codeFile when executable is created.
-//                codeFile.delete();
-//            }
+            finally {
+                // Delete codeFile when executable is created.
+                codeFile.delete();
+            }
 
             System.out.println("Compile result: " + result);
             return result;
@@ -187,7 +187,7 @@ public class CodeExecutorImpl implements CodeExecutor {
                             "    cout << n << endl;\n" +
                             "\n" +
                             "    int cnt = 0;\n" +
-                            "    while (cnt++ < 100000000000);\n" +
+                            "    while (cnt++ < 1000);\n" +
                             "\n" +
                             "    for (int i = 0 ; i < n ; i++) {\n" +
                             "        int x;\n" +

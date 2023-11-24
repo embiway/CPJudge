@@ -22,4 +22,13 @@ public class ProblemManagerImpl implements ProblemManager {
     public void deleteProblem(int problemId) {
         problemDAO.delete(problemId);
     }
+
+    public static void main(String[] args) {
+        ProblemManagerImpl problemManager = new ProblemManagerImpl();
+        Problem problem = new Problem();
+        problem.setId(1);
+        problem.setStatement("hello World");
+
+        problemManager.createProblem(problem);
+    }
 }
