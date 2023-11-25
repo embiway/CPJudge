@@ -60,6 +60,18 @@
 
   <build>
     <finalName>cp-judge</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-maven-plugin</artifactId>
+        <version>6.5.7</version>
+        <configuration>
+          <url>jdbc:sqlserver://localhost:1433</url>
+          <user>sa</user>
+          <password>password@123</password>
+        </configuration>
+      </plugin>
+    </plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -78,6 +90,10 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>flyway-maven-plugin</artifactId>
+          <version>6.5.7</version>
         </plugin>
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
