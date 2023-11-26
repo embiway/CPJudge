@@ -58,4 +58,9 @@ public class CodeExeuctorServiceImpl implements CodeExecutorService {
 
         return getDTOFromVerdict(code, consolidatedVerdict);
     }
+
+    @Override
+    public void demoMethod() {
+        throw new RuntimeException("Fuck You");
+    }
 }

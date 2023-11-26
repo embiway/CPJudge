@@ -10,4 +10,7 @@ public interface CodeExecutorService {
 
     @RequestMapping(path = "/checkResult", consumes = MediaType.APPLICATION_JSON_VALUE)
     VerdictDTO checkResult(@RequestBody CodeDTO code);
+
+    @RequestMapping(path = "/demo")
+    void demoMethod();
 }

@@ -1,1 +1,6 @@
-*/target/*
+*.class
+code-executor/target
+cp-judge/target
+code-pojo/target
+.classpath
+.settings
