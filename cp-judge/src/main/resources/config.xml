@@ -17,5 +17,6 @@
     </environments>
     <mappers>
         <mapper resource="ProblemMapper.xml"/>
+        <mapper resource="AuthMapper.xml"/>
     </mappers>
 </configuration>

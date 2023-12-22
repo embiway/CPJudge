@@ -1,23 +1,16 @@
-package com.judge;
+package com.judge.dao;
 
 import com.embi.Problem;
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 public class ProblemDAOImpl implements ProblemDAO {
 
-    String resource = "problem-config.xml";
-    InputStream inputStream = Resources.getResourceAsStream(resource);
-//    @Autowired
-    SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);;
-
+    SqlSessionFactory sqlSessionFactory;
     public ProblemDAOImpl() throws IOException {
 
     }

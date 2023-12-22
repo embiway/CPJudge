@@ -1,6 +1,7 @@
-package com.judge;
+package com.judge.server;
 
 import com.embi.Problem;
+import com.judge.dao.ProblemDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProblemManagerImpl implements ProblemManager {

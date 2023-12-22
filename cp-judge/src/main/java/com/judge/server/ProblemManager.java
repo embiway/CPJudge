@@ -1,4 +1,4 @@
-package com.judge;
+package com.judge.server;
 
 import com.embi.Problem;
 

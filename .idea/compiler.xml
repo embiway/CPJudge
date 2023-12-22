@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="code-pojo" />
         <module name="code-executor" />
         <module name="cp-judge" />
+        <module name="JudgePOJO" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

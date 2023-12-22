@@ -83,7 +83,7 @@
 
   <modules>
     <module>code-executor</module>
-    <module>code-pojo</module>
+    <module>JudgePOJO</module>
     <module>cp-judge</module>
   </modules>
 </project>

@@ -1,4 +1,4 @@
-package com.judge;
+package com.judge.dao;
 
 import com.embi.Problem;
 
