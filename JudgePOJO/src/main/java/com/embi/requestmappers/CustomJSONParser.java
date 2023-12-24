@@ -1,7 +1,7 @@
-package com.embi.service.requestmappers;
+package com.embi.requestmappers;
 
-import com.embi.service.DTO.CodeDTO;
-import com.embi.service.DTO.VerdictDTO;
+import com.embi.DTO.CodeDTO;
+import com.embi.DTO.VerdictDTO;
 import com.fasterxml.jackson.core.JacksonException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
@@ -9,11 +9,9 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-@Component
 public class CustomJSONParser extends SimpleModule {
     public CustomJSONParser() {
         this.addDeserializer(CodeDTO.class, new JsonDeserializer<CodeDTO>() {

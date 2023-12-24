@@ -5,17 +5,19 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Optional;
 
+@Component
 public class AuthDAOImpl implements AuthDAO{
-
-    String resource = "config.xml";
-    InputStream inputStream = Resources.getResourceAsStream(resource);
-    SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);;
+    @Autowired
+    @Qualifier("config")
+    SqlSessionFactory sqlSessionFactory;
 
     public AuthDAOImpl() throws IOException {
     }

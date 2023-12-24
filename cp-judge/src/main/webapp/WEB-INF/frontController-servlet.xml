@@ -11,17 +11,16 @@
 	http://www.springframework.org/schema/context/spring-context-2.5.xsd"
 >
     <ctx:annotation-config></ctx:annotation-config>
-    <context:component-scan base-package="com.embi"/>
-    <context:component-scan base-package="com.embi.service"/>
-    <context:component-scan base-package="com.com.judge"/>
-    <context:component-scan base-package="com.com.judge.service"/>
-    <context:component-scan base-package="com.com.judge.server"/>
-    <context:component-scan base-package="com.com.judge.dao"/>
-    <bean id="authDAO" class="com.judge.dao.AuthDAOImpl"/>
-    <bean id="authManager" class="com.judge.server.AuthManagerImpl">
-        <property name="authDAO" ref="authDAO"/>
-    </bean>
-    <bean id="authenticationFilter" class="com.judge.AuthenticationFilter">
-        <property name="authManager" ref="authManager"/>
-    </bean>
+    <context:component-scan base-package="com.judge.dao"/>
+    <context:component-scan base-package="com.judge.server"/>
+    <context:component-scan base-package="com.judge.service"/>
+    <context:component-scan base-package="com.judge"/>
+    <bean id="customObjectMapper" class="com.embi.requestmappers.CustomObjectMapper"/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <constructor-arg ref="customObjectMapper"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 </beans>

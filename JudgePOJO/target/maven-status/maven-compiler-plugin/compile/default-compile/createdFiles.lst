@@ -1,5 +1,12 @@
-com/embi/Problem.class
 com/embi/User.class
+com/embi/DTO/CodeDTO.class
+com/embi/requestmappers/CustomJSONParser.class
 com/embi/Token.class
+com/embi/requestmappers/CustomJSONParser$1.class
+com/embi/requestmappers/CustomObjectMapper.class
 com/embi/Language.class
+com/embi/Problem.class
+com/embi/DTO/VerdictDTO.class
+com/embi/requestmappers/CustomJSONParser$1$1.class
 com/embi/Code.class
+com/embi/requestmappers/CustomJSONParser$2.class

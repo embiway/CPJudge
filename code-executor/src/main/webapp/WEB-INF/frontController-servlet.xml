@@ -14,7 +14,7 @@
     <context:component-scan base-package="com.embi"/>
     <context:component-scan base-package="com.embi.service"/>
     <context:component-scan base-package="com.embi.server"/>
-    <bean id="customObjectMapper" class="com.embi.service.requestmappers.CustomObjectMapper"/>
+    <bean id="customObjectMapper" class="com.embi.requestmappers.CustomObjectMapper"/>
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">

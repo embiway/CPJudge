@@ -2,8 +2,8 @@ package com.embi.service;
 
 import com.embi.*;
 import com.embi.server.CodeVerdictManager;
-import com.embi.service.DTO.CodeDTO;
-import com.embi.service.DTO.VerdictDTO;
+import com.embi.DTO.CodeDTO;
+import com.embi.DTO.VerdictDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

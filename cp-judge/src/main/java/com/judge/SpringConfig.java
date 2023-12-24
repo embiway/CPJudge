@@ -14,7 +14,7 @@ import java.io.InputStream;
 public class SpringConfig {
     @Bean(name = "config")
     public SqlSessionFactory getSqlSessionFactory() throws IOException {
-        String resource = "com/judge/config.xml";
+        String resource = "config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         return new SqlSessionFactoryBuilder().build(inputStream);
     }

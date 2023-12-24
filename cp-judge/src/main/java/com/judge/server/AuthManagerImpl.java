@@ -15,8 +15,10 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.*;
 
+@Component
 public class AuthManagerImpl implements AuthManager {
 
+    @Autowired
     AuthDAO authDAO;
 
     public AuthDAO getAuthDAO() {
@@ -50,7 +52,7 @@ public class AuthManagerImpl implements AuthManager {
         String decodedPayload = new String(Base64.getDecoder().decode(parts.get(1).getBytes(StandardCharsets.UTF_8)));
 
         String expectedSignature = Hashing.hmacSha256(secret.getBytes(StandardCharsets.UTF_8))
-                .hashString(decodedHeader + "." + decodedPayload, StandardCharsets.UTF_8)
+                .hashString(parts.get(0) + "." + parts.get(1), StandardCharsets.UTF_8)
                 .toString();
 
         return expectedSignature.equals(parts.get(2));

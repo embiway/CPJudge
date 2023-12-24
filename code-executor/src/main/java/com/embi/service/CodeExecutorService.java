@@ -1,11 +1,12 @@
 package com.embi.service;
 
-import com.embi.service.DTO.CodeDTO;
-import com.embi.service.DTO.VerdictDTO;
+import com.embi.DTO.CodeDTO;
+import com.embi.DTO.VerdictDTO;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/hello")
 public interface CodeExecutorService {
 
     @RequestMapping(path = "/checkResult", consumes = MediaType.APPLICATION_JSON_VALUE)

@@ -3,7 +3,9 @@ package com.judge.server;
 import com.embi.Problem;
 import com.judge.dao.ProblemDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProblemManagerImpl implements ProblemManager {
 
     @Autowired
@@ -24,12 +26,4 @@ public class ProblemManagerImpl implements ProblemManager {
         problemDAO.delete(problemId);
     }
 
-    public static void main(String[] args) {
-        ProblemManagerImpl problemManager = new ProblemManagerImpl();
-        Problem problem = new Problem();
-        problem.setId(1);
-        problem.setStatement("hello World");
-
-        problemManager.createProblem(problem);
-    }
 }

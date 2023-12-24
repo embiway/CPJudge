@@ -1,4 +1,4 @@
-package com.embi.service.DTO;
+package com.embi.DTO;
 
 public class VerdictDTO {
     int codeId;

@@ -11,11 +11,7 @@ public class AuthenticationFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        try {
-            throw new Exception("Hello World");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override
