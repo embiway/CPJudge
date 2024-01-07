@@ -30,11 +30,11 @@ public class CustomJSONParser extends SimpleModule {
                 code.setLanguage(jsonNode.get("language").asText("cpp"));
                 code.setIo(mapper.convertValue(jsonNode.get("io"), new TypeReference<>(){}));
 
-                code.setActualCode(jsonNode.get("code").asText());
+                code.setActualCode(jsonNode.get("actualCode").asText());
                 code.setUseOutputVerifier(jsonNode.get("useOutputVerifier").asBoolean(false));
                 if (code.isUseOutputVerifier()) code.setOutputVerifier(jsonNode.get("outputVerifier").asText());
-                code.setProblemTimeLimit(jsonNode.get("timeLimit").asInt());
-                code.setProblemMemoryLimit(jsonNode.get("memoryLimit").asInt());
+                code.setProblemTimeLimit(jsonNode.get("problemTimeLimit").asInt());
+                code.setProblemMemoryLimit(jsonNode.get("problemMemoryLimit").asInt());
 
                 return code;
             }

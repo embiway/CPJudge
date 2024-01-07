@@ -47,13 +47,7 @@ public class CodeExecutorImpl implements CodeExecutor {
         return prepareCommand(code, false);
     }
 
-    private void terminateProcess(Process process, String executable) throws IOException, InterruptedException {
-        // Should never be this case
-        if (executable.equals("")) {
-            process.destroy();
-            return;
-        }
-
+    private void terminateProcess(String executable) throws IOException, InterruptedException {
         // Check if any process by this name is being executed currently
         Process pidFetchProcess = new ProcessBuilder(commandPreparationManager.getCheckProcessCommand(executable)).start();
         BufferedReader pidReader = new BufferedReader(new InputStreamReader(pidFetchProcess.getInputStream()));
@@ -69,13 +63,11 @@ public class CodeExecutorImpl implements CodeExecutor {
             Process killProcess = new ProcessBuilder(commandPreparationManager.getTaskKillCommand(executable)).start();
             killProcess.waitFor();
         }
-
-        // Just destroy the original process that spun the subprocess.
-        process.destroy();
     }
 
     private void sendInputToStream(Process process, String input) throws IOException, InterruptedException {
-        Thread.sleep(4000);
+        if (input.isEmpty()) return;
+//        Thread.sleep(4000);
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(process.getOutputStream()));
         writer.write(input);
         System.out.println("Done\n");
@@ -141,12 +133,13 @@ public class CodeExecutorImpl implements CodeExecutor {
             ProcessBuilder executionProcessBuilder = new ProcessBuilder();
             executionProcessBuilder.command(commandPreparationManager.getFinalBashCommand(prepareExecutableCommand(code)));
             try {
-                Process execProcess = executionProcessBuilder.start();
-                sendInputToStream(execProcess, inputParams);
-                CompletableFuture<Void> execFuture = CompletableFuture.runAsync(() -> {
+                CompletableFuture<String> execFuture = CompletableFuture.supplyAsync(() -> {
                     try {
+                        Process execProcess = executionProcessBuilder.start();
+                        sendInputToStream(execProcess, inputParams);
                         execProcess.waitFor();
                         result.append(fetchResult(execProcess));
+                        return "";
                     } catch (InterruptedException | IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -156,7 +149,8 @@ public class CodeExecutorImpl implements CodeExecutor {
                 ScheduledFuture<String> timeLimitFuture = executorService.schedule(() -> {
                     // If after the time specified in the problem the future is not completed then
                     if (!execFuture.isDone()) {
-                        terminateProcess(execProcess, code.getId()+commandPreparationManager.getExecutableExtension());
+                        execFuture.complete("");
+                        terminateProcess(code.getId()+commandPreparationManager.getExecutableExtension());
                         return Verdict.ResultCode.TLE.getName();
                     }
                     return "";
@@ -187,7 +181,7 @@ public class CodeExecutorImpl implements CodeExecutor {
                             "    cout << n << endl;\n" +
                             "\n" +
                             "    int cnt = 0;\n" +
-                            "    while (cnt++ < 1000);\n" +
+                            "    while (cnt++ < 100000000000000000);\n" +
                             "\n" +
                             "    for (int i = 0 ; i < n ; i++) {\n" +
                             "        int x;\n" +

@@ -5,11 +5,16 @@ import com.embi.server.CodeVerdictManager;
 import com.embi.DTO.CodeDTO;
 import com.embi.DTO.VerdictDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Component
+@RestController
+@RequestMapping("/code")
 public class CodeExeuctorServiceImpl implements CodeExecutorService {
 
     @Autowired
@@ -36,7 +41,8 @@ public class CodeExeuctorServiceImpl implements CodeExecutorService {
     }
 
     @Override
-    public VerdictDTO checkResult(CodeDTO codeDTO) {
+    @RequestMapping(path = "/checkResult", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public VerdictDTO checkResult(@RequestBody CodeDTO codeDTO) {
         Code code = getCodeFromDTO(codeDTO);
         Verdict consolidatedVerdict = new Verdict();
 
@@ -60,6 +66,7 @@ public class CodeExeuctorServiceImpl implements CodeExecutorService {
     }
 
     @Override
+    @RequestMapping(path = "/demo")
     public void demoMethod() {
         throw new RuntimeException("Fuck You");
     }

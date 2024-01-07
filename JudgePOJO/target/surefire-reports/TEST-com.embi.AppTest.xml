@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.embi.AppTest" time="0.03" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.embi.AppTest" time="0.036" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/home/embi/.jdks/corretto-17.0.9/lib"/>
-    <property name="sun.java.command" value="/home/embi/Documents/Projects/CPJudge/JudgePOJO/target/surefire/surefirebooter8702568493771911331.jar /home/embi/Documents/Projects/CPJudge/JudgePOJO/target/surefire 2023-12-24T16-41-41_591-jvmRun1 surefire3423066647074646117tmp surefire_0161306664914448793tmp"/>
+    <property name="sun.java.command" value="/home/embi/Documents/Projects/CPJudge/JudgePOJO/target/surefire/surefirebooter12768652620144495436.jar /home/embi/Documents/Projects/CPJudge/JudgePOJO/target/surefire 2024-01-07T15-30-16_861-jvmRun1 surefire4277931630350282067tmp surefire_010962024370789369164tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/embi/Documents/Projects/CPJudge/JudgePOJO/target/test-classes:/home/embi/Documents/Projects/CPJudge/JudgePOJO/target/classes:/home/embi/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/embi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/embi/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar:/home/embi/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar:/home/embi/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/embi/Documents/Projects/CPJudge/JudgePOJO/target/surefire/surefirebooter8702568493771911331.jar"/>
+    <property name="surefire.real.class.path" value="/home/embi/Documents/Projects/CPJudge/JudgePOJO/target/surefire/surefirebooter12768652620144495436.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.9+8-LTS"/>
     <property name="user.name" value="embi"/>
@@ -52,5 +52,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.embi.AppTest" time="0.001"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.embi.AppTest" time="0.005"/>
 </testsuite>
